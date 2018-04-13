@@ -9,6 +9,7 @@ public class Gif {
     private String username;
     private boolean favorite;
 
+    //Constructor of POJO
     public Gif(String name, int categoryId, LocalDate dateUploaded, String username, boolean favorite) {
         this.name = name;
         this.categoryId = categoryId;
@@ -34,6 +35,7 @@ public class Gif {
     }
 
     public LocalDate getDateUploaded() {
+        //adding Local Date
         return dateUploaded;
     }
 
