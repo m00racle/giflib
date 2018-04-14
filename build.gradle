@@ -1,6 +1,8 @@
 group 'com.teamtreehouse'
 version '1.0-SNAPSHOT'
 
+
+//include the Spring Boot plugin
 buildscript {
     repositories {
         mavenCentral()
@@ -10,16 +12,26 @@ buildscript {
     }
 }
 
+//apply java plugin (expects src/main/java to be source folder)
 apply plugin: 'java'
+
 //apply plugin: 'spring-boot'<--this plugin id is deprecated, change to:
 apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 
+//specify the location where our dependencies will be found
 repositories {
     mavenCentral()
 }
 
+//specify dependencies
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // https://mvnrepository.com/artifact/org.hashids/hashids
+    //this dependencies allows us easily generate unique hashes for our gif:
+    //these hashes are unique identifiers that are separate from the ids assigned to each gif:
+    compile group: 'org.hashids', name: 'hashids', version: '1.0.1'
+
 }
